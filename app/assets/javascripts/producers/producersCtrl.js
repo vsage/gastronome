@@ -1,4 +1,4 @@
-angular.module("gastronome")
+angular.module('gastronome')
 .controller('ProducersCtrl', ['$scope','$stateParams','producers',function($scope, $stateParams, producers){
 
   $scope.addPost = function(){
