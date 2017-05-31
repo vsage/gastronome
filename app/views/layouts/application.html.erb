@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app='gastronome' ng-strict-di>
   <head>
     <title>Gastronome</title>
     <%= csrf_meta_tags %>
@@ -8,8 +8,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body ng-app="gastronome" ng-controller="MainCtrl">
-    <div ng-include="'nav/_nav.html'"></div>
+  <body>
     <%= yield %>
   </body>
 </html>

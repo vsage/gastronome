@@ -13,4 +13,6 @@ angular.module('gastronome')
     });
   };
 
+console.log(Auth.isAuthenticated());
+
 }]);

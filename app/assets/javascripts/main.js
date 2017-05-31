@@ -5,7 +5,8 @@ angular.module('gastronome', ['ngResource', 'ui.bootstrap', 'templates', 'Devise
     .state('home', {
       url: '/home',
       templateUrl: 'home/_home.html',
-      controller: 'MainCtrl'
+      controller: 'MainCtrl',
+      controllerAs: 'mainCtrl'
     })
     .state('producers', {
       url: '/producers/{id}',
@@ -17,21 +18,21 @@ angular.module('gastronome', ['ngResource', 'ui.bootstrap', 'templates', 'Devise
       templateUrl: 'auth/_login.html',
       controller: 'AuthCtrl',
       onEnter: ['$state', 'Auth', function($state, Auth) {
-        Auth.currentUser().then(function (){
-          // $state.go('home');
-        })
+        // Auth.currentUser().then(function (){
+        //   // $state.go('home');
+        // })
       }]
     })
     .state('register', {
       url: '/register',
       templateUrl: 'auth/_register.html',
       controller: 'AuthCtrl',
-      onEnter: ['$state', 'Auth', function($state, Auth) {
-        console.log("here");
-        Auth.currentUser().then(function (){
-          // $state.go('home');
-        })
-      }]
+      // onEnter: ['$state', 'Auth', function($state, Auth) {
+      //   console.log("here");
+      //   Auth.currentUser().then(function (){
+      //     // $state.go('home');
+      //   })
+      // }]
     });
 
   $urlRouterProvider.otherwise('home');

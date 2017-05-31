@@ -1,0 +1,107 @@
+$primary_color-navbar : $primary_color;
+$hover_color-navbar : $red_2;
+
+.navbarMenu-container {
+  margin-left: 10px;
+  border-bottom: none;
+  border:none;
+  background-color: $primary_color-navbar;
+  &> li.active {
+    &> a, &> a:hover, &> a:focus {
+      background-color: white;
+      margin-bottom: -1px;
+      border: none;
+      cursor: pointer;
+      &> span {
+        color: $primary_color-navbar;
+        font-weight: bold;
+      }
+
+    }
+    &> a:after, &> a:hover:after, &> a:focus:after {
+      border-left: 30px solid white;
+    }
+  }
+
+  &> li {
+    &> a:focus, &> a:hover  {
+      border:none;
+      background-color: $red_2;
+    }
+    &> a:hover:after, &> a:focus:after {
+      border-left: 30px solid $red_2;
+    }
+    &> a {
+      border-radius: 0px;
+      border:none;
+      margin: 0;
+      font-size: 13px;
+      text-transform: uppercase;
+      &> span {
+        color: white;
+        font-weight: bold;
+      }
+    }
+  }
+}
+.breadcrumb {
+  overflow: hidden;
+  margin-bottom: 7px;
+  padding: 0px;
+  border: 1px solid #ddd;
+  li {
+    float: left;
+    a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 0 10px 55px;
+      background: brown; /* fallback color */
+      background: $primary_color-navbar;
+      position: relative;
+      display: block;
+      float: left;
+
+    }
+    a:after {
+      content: " ";
+      display: block;
+      width: 0;
+      height: 0;
+      border-top: 50px solid transparent;           /* Go big on the size, and let overflow hide */
+      border-bottom: 50px solid transparent;
+      border-left: 30px solid $primary_color-navbar;
+      position: absolute;
+      top: 50%;
+      margin-top: -50px;
+      left: 100%;
+      z-index: 2;
+    }
+    a:before {
+      content: " ";
+      display: block;
+      width: 0;
+      height: 0;
+      border-top: 50px solid transparent;           /* Go big on the size, and let overflow hide */
+      border-bottom: 50px solid transparent;
+      border-left: 30px solid white;
+      position: absolute;
+      top: 50%;
+      margin-top: -50px;
+      margin-left: 1px;
+      left: 100%;
+      z-index: 1;
+    }
+  }
+  li:first-child a {
+    padding-left: 15px;
+  }
+  li:nth-child(2) a {
+    padding-left: 45px;
+  }
+  li:nth-child(3) a {
+    padding-left: 25px;
+  }
+  li:nth-child(4) a {
+    padding-left: 25px;
+  }
+}

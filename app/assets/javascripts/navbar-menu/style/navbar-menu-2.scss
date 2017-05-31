@@ -1,0 +1,87 @@
+$primary_color-navbar : #ecf0f1;
+$hover_color-navbar : #ecf0f1;
+/* ======================================================== navbarMenu Style 1 */
+.navbarMenu {
+    display: inline-block;
+    position: relative;
+    padding-bottom: 3px;
+
+}
+
+
+.navbarMenu:before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 0;
+    transition: width 0s ease, background .5s ease;
+}
+.navbarMenu:after {
+    content: '';
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 3px;
+    width: 0;
+    background: $primary_color-navbar;
+    transition: width .5s ease;
+}
+.navbarMenu:hover:before {
+    width: 100%;
+    background: $primary_color-navbar;
+    transition: width .5s ease;
+}
+.navbarMenu:hover:after {
+    width: 100%;
+    background: transparent;
+    transition: all 0s ease;
+}
+
+// li.active .navbarMenu:before {
+//   width: 100%;
+//   font-weight: bold;
+//   background: $primary_color-navbar;
+// }
+li.active .navbarMenu {
+  font-weight: bold;
+  color: $primary_color-navbar
+}
+
+
+.navbarMenu-container > li.active > a, .navbarMenu-container > li.active > a:hover, .navbarMenu-container > li.active > a:focus {
+  border:none;
+  background-color: transparent;
+}
+.navbarMenu-container {
+  padding-left: 30px;
+  border-bottom: none;
+  padding: 0px;
+  background-color: transparent;
+  border-radius: 0px;
+  margin: 0px;
+  padding-left: 30px;
+  border-bottom: none;
+  &> li {
+    float: none;
+    &> a {
+      border:none;
+      margin: 0;
+      font-size: 13px;
+      text-transform: uppercase;
+    }
+    &> a:before {
+      display: none;
+    }
+  }
+  &> li:before {
+    display: none;
+  }
+}
+.navbarMenu-container > li > a:hover, .navbarMenu-container > li > a:focus  {
+  background-color: transparent;
+  border:none;
+}
