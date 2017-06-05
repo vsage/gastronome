@@ -1,0 +1,208 @@
+/* #############################################################################
+* --------------------------------------------------------- Spinners & Backdrops
+* ##############################################################################
+*/
+
+/* ########################################################################
+* --------------------------------------------------- Original SpinKit SCSS
+* #########################################################################
+*/
+
+$spinkit-spinner-margin: 40px auto !default;
+$spinkit-size: 40px !default;
+$spinkit-spinner-color: #333 !default;
+
+.sk-cube-grid {
+  $delayRange: 0.4s;
+
+  width: $spinkit-size;
+  height: $spinkit-size;
+  margin: $spinkit-spinner-margin;
+
+  .sk-cube {
+    width: 33.33%;
+    height: 33.33%;
+    background-color: $spinkit-spinner-color;
+    float: left;
+    animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+  }
+
+  /*
+   * Spinner positions
+   * 1 2 3
+   * 4 5 6
+   * 7 8 9
+   */
+
+  .sk-cube1 { animation-delay: $delayRange * 0.50 }
+  .sk-cube2 { animation-delay: $delayRange * 0.75 }
+  .sk-cube3 { animation-delay: $delayRange }
+  .sk-cube4 { animation-delay: $delayRange * 0.25 }
+  .sk-cube5 { animation-delay: $delayRange * 0.50 }
+  .sk-cube6 { animation-delay: $delayRange * 0.75 }
+  .sk-cube7 { animation-delay: 0.0s }
+  .sk-cube8 { animation-delay: $delayRange * 0.25 }
+  .sk-cube9 { animation-delay: $delayRange * 0.50 }
+}
+
+@keyframes sk-cubeGridScaleDelay {
+  0%, 70%, 100% { transform:scale3D(1.0, 1.0, 1.0) }
+  35%           { transform:scale3D(0.0, 0.0, 1.0) }
+}
+
+/* ########################################################################
+* ---------------------------------------------------- Eki additionnal SCSS
+* #########################################################################
+*/
+.dark-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(26,36,47, 0.8);
+  pointer-events: all;
+  z-index: 1050;
+
+  .sk-cube-grid {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -20px;
+    margin-left: -20px;
+    background-color: transparent;
+
+    .sk-cube {
+      background-color: #fff;
+    }
+
+    .spinner-message {
+      display: none;
+      padding: 20px;
+
+      .spinner-message-title {
+        height: 30px;
+        font-size: 1.2em;
+      }
+
+      .spinner-message-content {
+        height: 90px;
+        overflow-y: auto;
+
+        .content-headline {
+          font-size: 0.9em;
+        }
+
+        .content-info {
+          font-size: 0.8em;
+        }
+      }
+
+      .spinner-message-button {
+        text-align: center;
+        height: 30px;
+
+        button {
+          width: 30px;
+          height: 30px;
+          padding: 2px;
+          margin-left: 5px;
+          margin-right: 5px;
+          -webkit-border-radius: 15px;
+          -moz-border-radius: 15px;
+          border-radius: 15px;
+        }
+      }
+    }
+
+    &.in {
+      background-color: #fff;
+      animation: eki-zoomOnMessage 0.5s 1 ease-in-out;
+      animation-fill-mode: forwards;
+      animation-delay: 0.5s;
+
+      .sk-cube {
+        animation: sk-cubeGridScaleDelay 1.3s 1 ease-in-out;
+      }
+    }
+
+    &.out {
+      animation: eki-zoomOnMessage 0.5s 1 ease-in-out;
+      animation-fill-mode: forwards;
+      animation-delay: 0s;
+      animation-direction: reverse;
+
+      .sk-cube {
+        animation: sk-cubeGridScaleDelay 1.3s 1 ease-in-out;
+      }
+
+      &.fixed {
+        .spinner-message-button,
+        .spinner-message-content,
+        .spinner-message-title {
+          display: none;
+        }
+      }
+    }
+
+    &.fixed {
+      background-color: #fff;
+      width: 400px;
+      height: 200px;
+      margin-top: -100px;
+      margin-left: -200px;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      border-radius: 5px;
+
+      .sk-cube {
+        display: none;
+      }
+
+      .spinner-message {
+        display: block;
+      }
+
+      .spinner-hide {
+        display: inline-block;
+      }
+
+      .spinner-abort,
+      .spinner-validate {
+        display: none;
+      }
+
+      &.validation {
+        .spinner-hide {
+          display: none;
+        }
+
+        .spinner-abort,
+        .spinner-validate {
+          display: inline-block;
+        }
+      }
+    }
+  }
+}
+@keyframes eki-zoomOnMessage {
+  0% {
+    width: 40px;
+    height: 40px;
+    margin-top: -20px;
+    margin-left: -20px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+  }
+
+  100% {
+    width: 400px;
+    height: 200px;
+    margin-top: -100px;
+    margin-left: -200px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+  }
+}

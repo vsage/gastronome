@@ -10,15 +10,18 @@ module Gastronome
   class Application < Rails::Application
 
     # config.action_controller.default_url_options = { :trailing_slash => true }
-    config.assets.paths << Rails.root.join("app", "assets", "fonts")
+    # config.assets.paths << Rails.root.join("app", "assets", "fonts")
     config.assets.paths << Rails.root.join('vendor', 'assets', 'bower_components')
     config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
     config.assets.precompile << /\.(?:svg|eot|otf|woff|ttf)\z/
-    config.autoload_paths += %W(#{config.root}/lib)
+    # config.autoload_paths += %W(#{config.root}/lib)
+    config.assets.initialize_on_precompile = false
+
 
     config.action_dispatch.perform_deep_munge = false
 
     config.angular_templates.module_name    = 'templates'
+    config.angular_templates.ignore_prefix  = %w(angular/)
     config.angular_templates.inside_paths   = ['app/assets']
     config.angular_templates.markups        = %w(erb)
     config.angular_templates.extension      = 'html'

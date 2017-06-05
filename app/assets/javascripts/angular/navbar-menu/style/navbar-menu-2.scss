@@ -1,5 +1,5 @@
-$primary_color-navbar : #ecf0f1;
-$hover_color-navbar : #ecf0f1;
+$primary_color-navbar : $primary_color;
+$hover_color-navbar : $red_2;
 /* ======================================================== navbarMenu Style 1 */
 .navbarMenu {
     display: inline-block;
