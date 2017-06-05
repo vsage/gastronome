@@ -1,0 +1,38 @@
+input.input-flat {
+  border-radius: 30px;
+  height: 39px;
+}
+
+button.button-flat {
+  width: 100%;
+  border-radius: 30px;
+  height: 39px;
+  border: none;
+  background-color: $primary_color;
+  color: white;
+  font-size: 13px;
+  text-transform: uppercase;
+  @include basic-transition();
+}
+button.button-flat:hover, button.button-flat:focus, button.button-flat:active:focus {
+  background-color: $primary_color_hover;
+  color: white;
+}
+
+.input-icon {
+  float: right;
+  margin-right: 25px;
+  margin-top: -28px;
+  position: relative;
+  z-index: 2;
+  color: $primary_color;
+}
+
+// Switch button extra css layer
+.custom-switch {
+
+}
+
+.custom-switch small{
+
+}

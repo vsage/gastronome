@@ -1,0 +1,121 @@
+/* ======================================================== NAVBAR WRAPPER STYLES */
+.navbar-wrapper {
+  background-color: $navbar-background-color;
+  border-bottom: 1px solid $navbar-border-color;
+}
+
+.navbar-inner {
+  width: 100%;
+  height: 55px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+li.profile-li{
+  position: relative;
+  display: block;
+  width: 90px;
+  height: 55px;
+  border-right: 1px solid $navbar-border-color;
+  border-left: 1px solid $navbar-border-color;
+}
+
+.navbar-three-bars {
+  width: 30px;
+  position: absolute;
+  left: 16px;
+  top: 18px;
+  cursor: pointer;
+}
+
+.navbar-logo {
+  img {
+    width: 76px;
+  }
+  float: left;
+  height: 55px;
+  line-height: 52px;
+  width: 82px;
+  cursor: default;
+  text-align: center;
+}
+
+.navbar-subtitle {
+  line-height: 55px;
+  float: left;
+  text-transform: uppercase;
+  font-size: 11px;
+  margin-left: 22px;
+}
+
+.navbar-inner > nav {
+  display: inline-block;
+}
+
+.navbar-inner > nav .nav {
+  margin: 0 !important;
+}
+
+.navbar-dropdown {
+  background-color: rgba(0,0,0,0) !important;
+}
+
+.navbar-user-img {
+  height: 32px;
+  width: 32px;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.navbar-user-roundbutton {
+  height: 32px;
+  width: 32px;
+  border-radius: 20px;
+  cursor: pointer;
+  background-color: $navbar-foreground-color;
+  padding-top: 7px;
+  margin-top: 11px;
+}
+
+.navbar-user-roundbutton > p {
+  font-size: 0.75em;
+  color: $navbar-background-color;
+  font-family: Gotham-Narrow-Book;
+  text-align: center;
+}
+
+.navbar-dropdown-user {
+  min-width: 225px !important;
+  box-shadow: none !important;
+  border: 1px solid $navbar-border-color !important;
+  margin-top: 0 !important;
+  margin-left: -135px !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+}
+
+.navbar-dropdown-user > li > a {
+  height: 60px;
+  border-radius: 0;
+  cursor: pointer;
+  background-color: $navbar-background-color !important;
+  border-bottom: 1px solid $navbar-border-color !important;
+  padding-top: 20px !important;
+  width: calc(100% - 20px);
+  margin: 0 auto;
+  padding-left: 15px !important;
+  @include transition(padding 0.2s linear);
+  color: $navbar-dropdown-foreground-color !important;
+  font-family: Gotham-Narrow-Book;
+}
+
+.navbar-dropdown-user > li > a:hover {
+  padding-left: 20px !important;
+  @include transition(padding 0.2s linear);
+}
+
+.navbar-dropdown-user > li:last-child > a {
+  border: none !important;
+}
+/* ======================================================== END NAVBAR WRAPPER STYLES */

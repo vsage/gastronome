@@ -1,0 +1,24 @@
+<header class="navbar-fixed-top navbar-wrapper">
+  <div class="row navbar-inner center-block">
+      <div class="navbar-logo">
+        <img class="" ng-src="/assets/eki.png" />
+      </div>
+      <span class="navbar-subtitle">EKI APP</span>
+      <saving-icon></saving-icon>
+    <nav class="pull-right hidden-xs">
+      <ul class="nav navbar-nav pull-right">
+        <li class="profile-li">
+          <a class="navbar-dropdown" style="padding:0px" data-toggle="dropdown" status="button" aria-haspopup="true" aria-expanded="false">
+            <div class="navbar-user-roundbutton center-block" ng-if="!homeCtrl.currentUser.picture">
+              <p>{{homeCtrl.currentUser.email[0]}}</p>
+            </div>
+            <img class="navbar-user-img" ng-if="homeCtrl.currentUser.picture" ng-src="{{homeCtrl.currentUser.picture}}" />
+          </a>
+          <ul class="dropdown-menu navbar-dropdown-user">
+            <li><a ng-click="homeCtrl.signOut()">Sign out</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+</header>

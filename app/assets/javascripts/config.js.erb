@@ -1,0 +1,46 @@
+(function (window) {
+  'use strict';
+
+  <% environment.context_class.instance_eval { include Rails.application.routes.url_helpers } %>
+  var absURL = '<%= root_path(:protocol => "http") %>';
+
+  <% if Rails.env.development? %>
+  	var absURL = '<%= root_path() %>';
+  <% else %>
+  	var absURL = '<%= root_path(:protocol => "https") %>';
+  <% end %>
+
+  var applicationModuleName = 'Gastronome';
+
+  var service = {
+    applicationEnvironment: window.env,
+    apiEndpoint: absURL + 'api/v1/',
+    urlEndpoint: absURL,
+    applicationModuleName: applicationModuleName,
+    applicationModuleVendorDependencies:  [ //ADD DEPENDENCIES HERE
+      'Devise',
+      'ui.bootstrap',
+      'ui.router',
+      'templates',
+      'ngAnimate',
+      'ngSanitize',
+      'ngResource',
+      // VENDOR
+      // INTERNAL
+      'navbar-menu'
+     ],
+    registerModule: registerModule
+  };
+
+  window.ApplicationConfiguration = service;
+
+  // Add a new vertical module
+  function registerModule(moduleName, dependencies) {
+    // Create angular module
+    angular.module(moduleName, dependencies || []);
+
+    // Add the module to the AngularJS configuration file
+    angular.module(applicationModuleName).requires.push(moduleName);
+  }
+
+}(window));

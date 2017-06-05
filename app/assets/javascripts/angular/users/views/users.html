@@ -1,0 +1,14 @@
+
+
+<table class="table table-stripped">
+  <tr>
+    <th>ID</th>
+    <th>EMAIL</th>
+    <th>CREATED AT</th>
+  </tr>
+  <tr ng-repeat="user in usersCtrl.users">
+    <td>{{user.id}}</td>
+    <td>{{user.email}}</td>
+    <td>{{user.created_at}}</td>
+  </tr>
+</table>

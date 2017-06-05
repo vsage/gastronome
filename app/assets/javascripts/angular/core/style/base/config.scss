@@ -1,0 +1,63 @@
+/* #############################################################################
+* ---------------------------------------------------------- Global
+* ##############################################################################
+*/
+
+$grey : #9F9F9F;
+$purple : #673AB7;
+$green : #2dbe60;
+$yellow : #EEB211;
+$red : #D3112D;
+$red_2 : #a8082a;
+$blue: #526DDE;
+
+$grey_1 : #eaecec;
+$grey_2 : #d7d7d7;
+$grey_3 : #f9f4f4;
+
+
+$background-color: #F9F9F9;
+$middle-wrapper-background-color: #FFF;
+$middle-wrapper-border-color: $grey_1;
+
+$primary_color : $red;
+$primary_color_hover : #e4103d;
+/* ########################################################################
+* ------------------------------------------------------- Fonts
+* #########################################################################
+*/
+
+$font-size-body: calc(10px + 0.4vw);
+$font-family: "Gotham-Narrow-Book";
+$font-family-title: "Gotham-Narrow-Medium";
+$font-family-light: "Gotham-Narrow-Light";
+/* #############################################################################
+* ---------------------------------------------------------- Navbar
+* ##############################################################################
+*/
+
+$navbar-background-color: #FFFFFF;
+$navbar-foreground-color: $primary_color;
+$navbar-border-color: #DCE0E0;
+$navbar-dropdown-foreground-color: #8C8C8C;
+
+/* #############################################################################
+* ---------------------------------------------------------- Buttons
+* ##############################################################################
+*/
+
+$background-color-white: #e9e9e9;
+$background-color-white-border: #e0e0e0;
+$background-color-white-disabled: #efefef;
+
+$background-color-neutral: $primary_color;
+$background-color-neutral-border: #3752c1;
+$background-color-neutral-disabled: #6783f7;
+
+$background-color-active: #2ecc71;
+$background-color-active-border: #27ae60;
+$background-color-active-disabled: #57d68d;
+
+$background-color-inactive: #e74c3c;
+$background-color-inactive-border: #c0392b;
+$background-color-inactive-disabled: #eb6f62;

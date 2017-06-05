@@ -3,7 +3,7 @@
  * Dependencies ui-router
  * Style navbarMenu class
  */
-angular.module('gastronome', [])
+angular.module('Gastronome', [])
 
   /**
    * The directive that will provide the navbar template

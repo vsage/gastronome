@@ -1,0 +1,27 @@
+#masterUI {
+}
+
+header {
+  @include basic-transition(all 0.5s linear);
+}
+
+// #masterUI.ng-enter {
+//   @include basic-transition(all 1s linear);
+//   header {
+//     @include fadeInDown();
+//   }
+// }
+
+// #masterUI.ng-enter{
+//   @include basic-transition(all .1s linear);
+//   @include fadeInDown();
+// }
+
+// #masterUI.ng-leave{
+//   @include basic-transition(all .1s linear);
+//   @include fadeOutDown();
+// }
+#masterUI.ng-leave {
+  @include basic-transition(all .1s linear);
+  @include fadeOutDown();
+}

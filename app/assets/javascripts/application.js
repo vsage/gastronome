@@ -9,7 +9,11 @@
 //= require angular-rails-templates
 //= require AngularDevise/lib/devise
 //= require angular-bootstrap/ui-bootstrap-tpls
+
+//= require config.js
 //= require main.js
 
-
+//= require ./angular/core/core.module
+//= require ./angular/users/users.module
+//= require_tree ./angular
 //= require_tree .

@@ -1,0 +1,20 @@
+<div class="connect-right">
+
+  <p class="connect-title">Please enter your email address & password</p>
+
+  <form class="connect-form" ng-submit="authenticationCtrl.signIn()" novalidate>
+    <div class="form-group">
+      <!-- <label for="emailField">Email address</label> -->
+      <input type="email" class="form-control input-flat" id="emailField" placeholder="Email" ng-model="authenticationCtrl.credentials.email" required>
+      <i class="fa fa-user-o input-icon" aria-hidden="true"></i>
+    </div>
+    <div class="form-group">
+      <!-- <label for="passwordField">Password</label> -->
+      <input type="password" style="margin-top:20px" class="form-control input-flat" id="passwordField" placeholder="Password" ng-model="authenticationCtrl.credentials.password" required>
+      <i class="fa fa-lock input-icon" aria-hidden="true"></i>
+    </div>
+    <button type="submit" class="btn btn-default button-flat" style="margin-top:30px">Sign in</button>
+    <p class="connect-message connect-emailerror" ng-class="{'visible':authenticationCtrl.invalidSignin}">Please check your email or password</p>
+  </form>
+
+</div>

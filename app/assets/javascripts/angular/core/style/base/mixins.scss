@@ -1,0 +1,81 @@
+@mixin css3-prefix($property, $value) {
+  -webkit-#{$property}: #{$value};
+  -khtml-#{$property}: #{$value};
+  -moz-#{$property}: #{$value};
+  -ms-#{$property}: #{$value};
+  -o-#{$property}: #{$value};
+  #{$property}: #{$value};
+}
+
+@mixin custom-button($button-text-color, $button-background-color, $button-background-color-active-border, $button-background-color-active-disabled) {
+  height: 42px !important;
+  font-family: $font-family-title;
+  color: $button-text-color !important;
+  border: none !important;
+  min-width: 125px !important;
+  border-radius: 2px !important;
+  font-size: 0.75em !important;
+  // @include basic-transition(all 0.3s ease-in-out);
+
+  background-color: $button-background-color !important;
+  border-bottom: 2px solid $button-background-color-active-border !important;
+
+  &:active {
+    border-bottom: none !important;
+  }
+
+  &:hover,
+  &[disabled] {
+    background-color: $button-background-color-active-disabled !important;
+  }
+}
+
+@mixin small-custom-button($button-text-color, $button-background-color, $button-background-color-active-border, $button-background-color-active-disabled) {
+  @include custom-button($button-text-color, $button-background-color, $button-background-color-active-border, $button-background-color-active-disabled);
+  height: 20px !important;
+  min-width: 60px !important;
+  padding: 0;
+}
+
+@mixin background-gradient($color1, $color2) {
+  background: $color1;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, $color1 0%, $color2 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, $color1 0%, $color2 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, $color1 0%, $color2 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter:progid:DXImageTransform.Microsoft.gradient( startColorstr = #{$color1}, endColorstr = #{$color2},GradientType=0 );
+  /* IE6-9 */
+}
+
+@mixin border-radius($radius) {
+  @include css3-prefix('border-radius', $radius);
+}
+
+@mixin box-shadow($x: 2px, $y: 2px, $blur: 3px, $color: rgba(50, 50, 50, 0.25), $inset: "") {
+  @if ($inset != "") {
+    @include css3-prefix('box-shadow', $inset $x $y $blur $color);
+  }
+  @else {
+    @include css3-prefix('box-shadow', $x $y $blur $color);
+  }
+}
+
+@mixin box-sizing($type: border-box) {
+  @include css3-prefix('box-sizing', $type);
+}
+
+@mixin text-shadow($x: 2px, $y: 2px, $blur: 5px, $color: rgba(50, 50, 50, 0.25)) {
+  text-shadow: $x $y $blur $color;
+}
+
+@mixin basic-transition($properties...) {
+  @if length($properties) >= 1 {
+    @include css3-prefix('transition', $properties);
+  }
+  @else {
+    @include css3-prefix('transition', "all 0.3s ease-in-out");
+  }
+}

@@ -1,0 +1,354 @@
+/* ======================================================== FONTS STYLES */
+@font-face {
+  font-family: 'Gotham-Narrow-Book';
+  src: font-url('Gotham-Narrow-Book.otf');
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gotham-Narrow-Medium';
+  src: font-url('Gotham-Narrow-Medium.otf');
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gotham-Narrow-Light';
+  src: font-url('Gotham-Narrow-Light.otf');
+  font-style: normal;
+}
+
+@font-face {
+	font-family: 'Tiempos';
+	src: font-url('Tiempos-Headline-Black.otf');
+}
+
+// @font-face {
+// 	font-family: 'Bebas';
+// 	src: font-url('bebas/BebasNeue-Regular.otf');
+//   font-style: normal;
+// }
+// @font-face {
+// 	font-family: 'Bebas-Bold';
+// 	src: font-url('bebas/BebasNeue-Bold.otf');
+//   font-weight: bold;
+// }
+//
+// @font-face {
+// 	font-family: 'Bebas-Light';
+// 	src: font-url('bebas/BebasNeue-Light.otf');
+//   font-weight: lighter;
+// }
+/* ======================================================== END FONTS STYLES */
+/* ======================================================== GENERAL STYLES */
+body,
+html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  font-size: $font-size-body;
+  font-family: $font-family;
+  background-color: $background-color;
+  -webkit-font-smoothing: antialiased;
+}
+
+.carousel,
+.nav,
+.pagination,
+.panel-title a {
+  cursor: pointer;
+}
+
+a:active,
+a:hover,
+a:link,
+a:visited {
+  text-decoration: none;
+}
+
+a:active,
+a:link,
+a:visited,
+span:hover {
+  text-decoration: none;
+}
+
+a:active,
+a:link,
+a:visited,
+div:hover {
+  text-decoration: none;
+}
+
+a,
+a > p,
+a > p:hover,
+a > span,
+a > span:hover,
+a:hover {
+  font-decoration: none;
+  color: #303030;
+}
+
+a > h1,
+a > h2,
+a > h3,
+a > h4,
+a > h5,
+a > h6,
+a > p {
+  text-decoration: none;
+  color: #303030;
+}
+
+a > h1:hover,
+a > h2:hover,
+a > h3:hover,
+a > h4:hover,
+a > h5:hover,
+a > h6:hover,
+a > p:hover {
+  text-decoration: none;
+  color: #303030;
+}
+
+button {
+  outline: none !important;
+}
+
+.parent {
+  display: table;
+  table-layout: fixed;
+}
+
+.child {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.padding-left-right-15 {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.padding-left-right-8 {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.no-margin {
+  margin: 0;
+}
+
+.no-margin-bottom {
+  margin-bottom: 0 !important;
+}
+
+.icon-title {
+  margin-right: 10px;
+}
+
+.asterisk {
+  color: $background-color-neutral;
+}
+
+input,
+select,
+textarea {
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.popover-content {
+  padding: 0;
+}
+.popover{
+  z-index: 500;
+}
+input::-webkit-input-placeholder {
+  color: #B7B7B7 !important;
+}
+
+input:-moz-placeholder {
+  /* Firefox 18- */
+  color: #B7B7B7 !important;
+}
+
+input::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #B7B7B7 !important;
+}
+
+input:-ms-input-placeholder {
+  color: #B7B7B7 !important;
+}
+
+input[type='file'] {
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  top: 0 !important;
+  position: absolute;
+  cursor: pointer;
+}
+
+.loading_message {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-family: $font-family;
+  color: #b1b1b1;
+  font-size: 0.9em;
+}
+
+/* Tooltip container */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+.popover-content {
+  font-family: $font-family;
+  font-size: 0.75em;
+  padding: 7px;
+}
+
+/* ======================================================== END GENERAL STYLES */
+/* ======================================================== CUSTOM STYLES */
+
+.user-img {
+  height: 33px;
+  width: 33px;
+  /*background-image:url('https://lh3.googleusercontent.com/-sa4y6Fwoz0c/AAAAAAAAAAI/AAAAAAAAAAA/AOtt-yFbvv9gpu0g2EpqHOS6hqLHFsZC_A/s32-c-mo/photo.jpg');*/
+  border-radius: 0;
+  cursor: pointer;
+}
+
+.user-img-small {
+  width: 25px;
+  height: 25px;
+}
+
+.spinning {
+  animation: spinning-rotation 1s ease-in-out infinite;
+}
+@keyframes spinning-rotation {
+  0% {
+    transform: rotate3d(0,0,1,0deg);
+  }
+
+  100% {
+    transform: rotate3d(0,0,1,360deg);
+  }
+}
+/* ======================================================== END CUSTOM STYLES */
+/* ======================================================= ANGULAR ANIMATIONS */
+.animate-if.ng-enter,
+.animate-if.ng-leave {
+  transition: all 0.5s;
+}
+
+.animate-if.ng-enter,
+.animate-if.ng-leave.ng-leave-active {
+  opacity: 0;
+}
+
+.animate-if.ng-enter.ng-enter-active,
+.animate-if.ng-leave {
+  opacity: 1;
+}
+
+.grey-text {
+  color: $grey;
+}
+
+.green-text {
+  color: $green;
+}
+
+.yellow-text {
+  color: $yellow;
+}
+
+.purple-text {
+  color: $purple;
+}
+
+.red-text {
+  color: $red;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.bold {
+  font-weight: bold
+}
+/* =================================================== END ANGULAR ANIMATIONS */
+
+.eki-errors {
+  z-index: 1060;
+  position: absolute;
+  top: 66px;
+  right: 15px;
+}
+
+.clear-icon-container {
+  position: relative;
+  cursor: pointer;
+  .clear-icon {
+    position: absolute;
+    top: -22px;
+    right: -42px;
+    color: $grey;
+  }
+}
+
+
+.arrows-order {
+  position: relative;
+  height: 20px;
+  display: inline;
+  font-size: 12px;
+  padding-right: 17px;
+  color: $grey;
+  .arrow-up {
+    position: absolute;
+    top: -7px;
+  }
+  .arrow-down {
+    position: absolute;
+    top: 9px;
+  }
+}
+
+hr {
+  margin: 10px 10px;
+}
